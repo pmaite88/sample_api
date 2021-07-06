@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
 
-Things you may want to cover:
+- create records in the database
+- retrieve records from the database
 
-* Ruby version
+## Usage
 
-* System dependencies
+### GET
 
-* Configuration
+`curl -X GET http://localhost:3000/test_links`
 
-* Database creation
+```json
+[
+    {
+        "id": 1,
+        "created_at": "2021-07-06T12:32:16.938Z",
+        "updated_at": "2021-07-06T12:32:16.938Z",
+        "url": "http://localhost:3000/test_links/1.json"
+    },
+    {
+        "id": 2,
+        "created_at": "2021-07-06T12:34:06.126Z",
+        "updated_at": "2021-07-06T12:34:06.126Z",
+        "url": "http://localhost:3000/test_links/2.json"
+    }
+]
+```
 
-* Database initialization
+### POST
 
-* How to run the test suite
+`curl -X POST http://localhost:3000/test_links`
 
-* Services (job queues, cache servers, search engines, etc.)
+```json
+{
+    "id": 3,
+    "created_at": "2021-07-06T12:42:08.067Z",
+    "updated_at": "2021-07-06T12:42:08.067Z",
+    "url": "http://localhost:3000/test_links/3.json"
+}
+```
 
-* Deployment instructions
+## Environment variables
 
-* ...
+Check .env.sample for guidance.
+
+```
+  DATABASE_NAME=sample_api
+  DATABASE_USERNAME=sample_api
+  DATABSE_PASSWORD=
+```
